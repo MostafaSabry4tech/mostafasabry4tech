@@ -1,5 +1,32 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, Linkedin, MessageCircle, Code, Server, Shield, FileText, Database, BarChart3, ChevronDown, Quote, Globe } from 'lucide-react';
+
+// Custom MS Logo Component
+const MSLogo = () => (
+  <div className="flex items-center justify-center w-10 h-10 mr-3">
+    <svg viewBox="0 0 40 40" className="w-full h-full">
+      <defs>
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#0284c7" />
+          <stop offset="100%" stopColor="#0369a1" />
+        </linearGradient>
+      </defs>
+      {/* M letter */}
+      <path
+        d="M5 30 L5 10 L12 10 L20 22 L28 10 L35 10 L35 30 L30 30 L30 18 L24 26 L16 26 L10 18 L10 30 Z"
+        fill="url(#logoGradient)"
+        opacity="0.9"
+      />
+      {/* S letter overlapping */}
+      <path
+        d="M15 35 C12 35 10 33 10 30 L14 30 C14 31 15 31 16 31 L24 31 C25 31 26 30 26 29 C26 28 25 27 24 27 L16 27 C12 27 10 25 10 22 C10 19 12 17 16 17 L24 17 C27 17 29 19 29 22 L25 22 C25 21 24 21 23 21 L17 21 C16 21 15 22 15 23 C15 24 16 25 17 25 L25 25 C29 25 31 27 31 30 C31 33 29 35 25 35 Z"
+        fill="#6b7280"
+        opacity="0.8"
+      />
+    </svg>
+  </div>
+);
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -253,7 +280,7 @@ const Index = () => {
         whatsappText: 'استشارة سريعة'
       },
       footer: {
-        copyright: '© 2025 مصطفى صبري. جميع الحقوق محفوظة. | أخصائي تقنية معلومات أول ومساعد افتراضي تقني',
+        copyright: 'جميع الحقوق محفوظة © موقع مصطفى صبري 2025',
         links: {
           privacy: 'سياسة الخصوصية',
           terms: 'شروط الاستخدام',
@@ -275,11 +302,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-sky-600 text-white" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Fixed Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-sky-700/95 backdrop-blur-sm border-b border-sky-500' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-sky-800/95 backdrop-blur-sm border-b border-sky-600' : 'bg-sky-800'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="text-2xl font-bold text-white">
-              Mostafa Sabry
+            {/* Logo and Brand Name */}
+            <div className="flex items-center">
+              <MSLogo />
+              <div className="text-2xl font-bold">
+                <span className="text-sky-200">Mostafa</span>
+                <span className="text-gray-300 ml-1">Sabry</span>
+              </div>
             </div>
             
             {/* Desktop Menu */}
@@ -322,7 +354,7 @@ const Index = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-sky-700/95 backdrop-blur-sm border-t border-sky-500">
+          <div className="md:hidden bg-sky-800/95 backdrop-blur-sm border-t border-sky-600">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {[
                 { key: 'about', label: currentLang.nav.about },
@@ -365,13 +397,13 @@ const Index = () => {
                   src="/lovable-uploads/fbec8b21-4a26-4c9f-bb98-ab7aa87c2757.png"
                   alt="Mostafa Sabry"
                   className="w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover object-center border-8 border-white/20 shadow-2xl"
-                  style={{ objectPosition: 'center top' }}
+                  style={{ objectPosition: 'center 20%' }}
                 />
               </div>
               
               {/* Hero Content */}
               <div className="text-center lg:text-left max-w-2xl">
-                <h1 className={`font-bold mb-6 text-white ${language === 'ar' ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}>
+                <h1 className={`font-bold mb-6 text-white ${language === 'ar' ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}>
                   {currentLang.hero.title}
                 </h1>
                 <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 font-light leading-relaxed">
