@@ -103,6 +103,59 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  /* RTL flex direction adjustments */
+  [dir="rtl"] .flex-row {
+    flex-direction: row-reverse;
+  }
+
+  /* RTL text alignment */
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
+
+  /* RTL margin and padding adjustments */
+  [dir="rtl"] .mr-4 {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+
+  [dir="rtl"] .ml-2 {
+    margin-right: 0.5rem;
+    margin-left: 0;
+  }
+
+  /* Arabic font support */
+  [dir="rtl"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arabic UI Text', 'Geeza Pro', 'Traditional Arabic';
+  }
 }
 
 /* Custom animations for the portfolio */
@@ -141,4 +194,22 @@ html {
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(17, 25, 40, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Profile photo styling */
+.profile-photo {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Brand color overrides for sky theme */
+.bg-sky-primary {
+  background-color: #00AEEF;
+}
+
+.text-sky-primary {
+  color: #00AEEF;
+}
+
+.border-sky-primary {
+  border-color: #00AEEF;
 }
