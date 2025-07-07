@@ -41,7 +41,7 @@ const Index = () => {
       },
       hero: {
         title: 'Senior IT Specialist',
-        subtitle: 'I help individuals and companies solve technical problems with ease',
+        subtitle: "I'm Mostafa Sabry, with 10 years of experience in IT support and virtual assistance. I help companies and entrepreneurs solve their tech issues and manage their work in an organized and professional way, so they can focus on growing their business — and leave all the tech stuff, problems, and improvements to me.",
         location: 'Based in Cairo, Egypt • 10+ Years of Experience • Tech Virtual Assistant',
         exploreServices: 'Explore Services',
         getInTouch: 'Get In Touch'
@@ -136,13 +136,16 @@ const Index = () => {
         linkedin: 'LinkedIn',
         whatsapp: 'WhatsApp',
         linkedinText: 'Connect with me',
-        whatsappText: 'Quick consultation',
-        ready: 'Ready to Get Started?',
-        readyText: 'Whether you need technical support, IT consulting, or virtual assistance, I\'m here to help you succeed.',
-        startProject: 'Start Your Project'
+        whatsappText: 'Quick consultation'
       },
       footer: {
-        copyright: '© 2025 Mostafa Sabry. All rights reserved. | Senior IT Specialist & Tech Virtual Assistant'
+        copyright: '© 2025 Mostafa Sabry. All rights reserved. | Senior IT Specialist & Tech Virtual Assistant',
+        links: {
+          privacy: 'Privacy Policy',
+          terms: 'Terms of Use',
+          cookies: 'Cookie Policy',
+          contact: 'Contact'
+        }
       }
     },
     ar: {
@@ -155,7 +158,7 @@ const Index = () => {
       },
       hero: {
         title: 'أخصائي تقنية معلومات أول',
-        subtitle: 'أساعد الأفراد والشركات في حل المشاكل التقنية بسهولة',
+        subtitle: 'أنا مصطفى صبري، لدي 10 سنوات من الخبرة في الدعم التقني والمساعدة الافتراضية. أساعد الشركات ورجال الأعمال في حل مشاكلهم التقنية وإدارة أعمالهم بطريقة منظمة ومهنية، حتى يتمكنوا من التركيز على نمو أعمالهم — ويتركوا لي كل الأمور التقنية والمشاكل والتحسينات.',
         location: 'مقيم في القاهرة، مصر • خبرة أكثر من 10 سنوات • مساعد افتراضي تقني',
         exploreServices: 'استكشف الخدمات',
         getInTouch: 'تواصل معي'
@@ -250,13 +253,16 @@ const Index = () => {
         linkedin: 'لينكد إن',
         whatsapp: 'واتساب',
         linkedinText: 'تواصل معي',
-        whatsappText: 'استشارة سريعة',
-        ready: 'مستعد للبدء؟',
-        readyText: 'سواء كنت تحتاج دعمًا تقنيًا أو استشارات تقنية أو مساعدة افتراضية، أنا هنا لمساعدتك على النجاح.',
-        startProject: 'ابدأ مشروعك'
+        whatsappText: 'استشارة سريعة'
       },
       footer: {
-        copyright: '© 2025 مصطفى صبري. جميع الحقوق محفوظة. | أخصائي تقنية معلومات أول ومساعد افتراضي تقني'
+        copyright: '© 2025 مصطفى صبري. جميع الحقوق محفوظة. | أخصائي تقنية معلومات أول ومساعد افتراضي تقني',
+        links: {
+          privacy: 'سياسة الخصوصية',
+          terms: 'شروط الاستخدام',
+          cookies: 'سياسة ملفات تعريف الارتباط',
+          contact: 'تواصل معي'
+        }
       }
     }
   };
@@ -270,9 +276,9 @@ const Index = () => {
   }));
 
   return (
-    <div className="min-h-screen bg-sky-400 text-white" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-sky-600 text-white" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       {/* Fixed Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-sky-500/95 backdrop-blur-sm border-b border-sky-300' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrollY > 50 ? 'bg-sky-700/95 backdrop-blur-sm border-b border-sky-500' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="text-2xl font-bold text-white">
@@ -319,7 +325,7 @@ const Index = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-sky-500/95 backdrop-blur-sm border-t border-sky-300">
+          <div className="md:hidden bg-sky-700/95 backdrop-blur-sm border-t border-sky-500">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {[
                 { key: 'about', label: currentLang.nav.about },
@@ -352,7 +358,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-600/20 to-sky-800/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-700/20 to-sky-900/40"></div>
         <div className="relative max-w-7xl mx-auto">
           <div className="animate-fade-in">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
@@ -361,7 +367,7 @@ const Index = () => {
                 <img
                   src="/lovable-uploads/fbec8b21-4a26-4c9f-bb98-ab7aa87c2757.png"
                   alt="Mostafa Sabry"
-                  className="w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover border-8 border-white/20 shadow-2xl"
+                  className="w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover object-center border-8 border-white/20 shadow-2xl"
                 />
               </div>
               
@@ -370,7 +376,7 @@ const Index = () => {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
                   {currentLang.hero.title}
                 </h1>
-                <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 mb-8 font-light">
+                <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 font-light leading-relaxed">
                   {currentLang.hero.subtitle}
                 </p>
                 <p className="text-lg text-white/80 mb-12">
@@ -402,10 +408,10 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-500/50">
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-700/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-12 text-white">{currentLang.about.title}</h2>
-          <div className="bg-sky-600/80 rounded-2xl p-8 sm:p-12 backdrop-blur-sm border border-sky-400">
+          <div className="bg-sky-800/80 rounded-2xl p-8 sm:p-12 backdrop-blur-sm border border-sky-600">
             <p className="text-lg sm:text-xl text-white leading-relaxed">
               {currentLang.about.content}
             </p>
@@ -421,7 +427,7 @@ const Index = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-sky-600/80 rounded-xl p-6 backdrop-blur-sm border border-sky-400 hover:border-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                className="bg-sky-800/80 rounded-xl p-6 backdrop-blur-sm border border-sky-600 hover:border-white transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
               >
                 <div className="text-white mb-4">
                   {service.icon}
@@ -439,7 +445,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-500/30">
+      <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-700/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">{currentLang.portfolio.title}</h2>
           
@@ -450,7 +456,7 @@ const Index = () => {
               {currentLang.portfolio.techProjects.items.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-sky-600/80 rounded-xl p-6 backdrop-blur-sm border border-sky-400 hover:border-white transition-all duration-300 transform hover:scale-105"
+                  className="bg-sky-800/80 rounded-xl p-6 backdrop-blur-sm border border-sky-600 hover:border-white transition-all duration-300 transform hover:scale-105"
                 >
                   <h4 className="text-xl font-semibold mb-3 text-white">
                     {project.title}
@@ -480,7 +486,7 @@ const Index = () => {
               {currentLang.portfolio.vaProjects.items.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-sky-600/80 rounded-xl p-6 backdrop-blur-sm border border-sky-400 hover:border-white transition-all duration-300 transform hover:scale-105"
+                  className="bg-sky-800/80 rounded-xl p-6 backdrop-blur-sm border border-sky-600 hover:border-white transition-all duration-300 transform hover:scale-105"
                 >
                   <h4 className="text-xl font-semibold mb-3 text-white">
                     {project.title}
@@ -513,7 +519,7 @@ const Index = () => {
             {currentLang.testimonials.items.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-sky-600/80 rounded-xl p-8 backdrop-blur-sm border border-sky-400 relative"
+                className="bg-sky-800/80 rounded-xl p-8 backdrop-blur-sm border border-sky-600 relative"
               >
                 <Quote className="w-8 h-8 text-white mb-4" />
                 <p className="text-white text-lg mb-6 leading-relaxed">
@@ -544,7 +550,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-500/50">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-sky-700/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-12 text-white">{currentLang.contact.title}</h2>
           <p className="text-xl text-white mb-12">
@@ -557,7 +563,7 @@ const Index = () => {
               href="https://wa.me/201559861446"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-sky-600/80 rounded-xl p-6 backdrop-blur-sm border border-sky-400 hover:border-green-400 transition-all duration-300 transform hover:scale-105 group"
+              className="bg-sky-800/80 rounded-xl p-6 backdrop-blur-sm border border-sky-600 hover:border-green-400 transition-all duration-300 transform hover:scale-105 group"
             >
               <MessageCircle className="w-8 h-8 text-green-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-semibold text-white mb-2">{currentLang.contact.whatsapp}</h3>
@@ -568,7 +574,7 @@ const Index = () => {
               href="https://www.linkedin.com/in/mostafasabry4tech/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-sky-600/80 rounded-xl p-6 backdrop-blur-sm border border-sky-400 hover:border-white transition-all duration-300 transform hover:scale-105 group"
+              className="bg-sky-800/80 rounded-xl p-6 backdrop-blur-sm border border-sky-600 hover:border-white transition-all duration-300 transform hover:scale-105 group"
             >
               <Linkedin className="w-8 h-8 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-semibold text-white mb-2">{currentLang.contact.linkedin}</h3>
@@ -578,37 +584,41 @@ const Index = () => {
             {/* Email - Right */}
             <a
               href="mailto:mostafa.sabry.it@gmail.com"
-              className="bg-sky-600/80 rounded-xl p-6 backdrop-blur-sm border border-sky-400 hover:border-white transition-all duration-300 transform hover:scale-105 group"
+              className="bg-sky-800/80 rounded-xl p-6 backdrop-blur-sm border border-sky-600 hover:border-white transition-all duration-300 transform hover:scale-105 group"
             >
               <Mail className="w-8 h-8 text-white mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-semibold text-white mb-2">{currentLang.contact.email}</h3>
               <p className="text-white/80">mostafa.sabry.it@gmail.com</p>
             </a>
           </div>
-
-          <div className="bg-sky-600/80 rounded-2xl p-8 backdrop-blur-sm border border-sky-400">
-            <h3 className="text-2xl font-semibold text-white mb-4">
-              {currentLang.contact.ready}
-            </h3>
-            <p className="text-white mb-6">
-              {currentLang.contact.readyText}
-            </p>
-            <button
-              onClick={() => window.open('mailto:mostafa.sabry.it@gmail.com', '_blank')}
-              className="bg-white text-sky-600 hover:bg-white/90 px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
-            >
-              {currentLang.contact.startProject}
-            </button>
-          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-sky-600 border-t border-sky-400">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="text-white">
-            {currentLang.footer.copyright}
-          </p>
+      <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-sky-800 border-t border-sky-600">
+        <div className="max-w-7xl mx-auto">
+          {/* Footer Links */}
+          <div className="flex flex-wrap justify-center gap-6 mb-6">
+            <a href="#privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors">
+              {currentLang.footer.links.privacy}
+            </a>
+            <a href="#terms-of-use" className="text-white/70 hover:text-white text-sm transition-colors">
+              {currentLang.footer.links.terms}
+            </a>
+            <a href="#cookie-policy" className="text-white/70 hover:text-white text-sm transition-colors">
+              {currentLang.footer.links.cookies}
+            </a>
+            <a href="#contact" className="text-white/70 hover:text-white text-sm transition-colors">
+              {currentLang.footer.links.contact}
+            </a>
+          </div>
+          
+          {/* Copyright */}
+          <div className="text-center">
+            <p className="text-white text-sm">
+              {currentLang.footer.copyright}
+            </p>
+          </div>
         </div>
       </footer>
     </div>

@@ -201,15 +201,15 @@ html {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Brand color overrides for sky theme */
+/* Brand color overrides for darker sky theme */
 .bg-sky-primary {
-  background-color: #00AEEF;
+  background-color: #0284c7;
 }
 
 .text-sky-primary {
-  color: #00AEEF;
+  color: #0284c7;
 }
 
 .border-sky-primary {
-  border-color: #00AEEF;
+  border-color: #0284c7;
 }
