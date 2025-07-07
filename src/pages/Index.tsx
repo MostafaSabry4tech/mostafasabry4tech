@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Mail, Linkedin, MessageCircle, Code, Server, Shield, FileText, Database, BarChart3, ChevronDown, Quote, Globe } from 'lucide-react';
 
@@ -42,13 +41,12 @@ const Index = () => {
       hero: {
         title: 'Senior IT Specialist',
         subtitle: "I'm Mostafa Sabry, with 10 years of experience in IT support and virtual assistance. I help companies and entrepreneurs solve their tech issues and manage their work in an organized and professional way, so they can focus on growing their business — and leave all the tech stuff, problems, and improvements to me.",
-        location: 'Based in Cairo, Egypt • 10+ Years of Experience • Tech Virtual Assistant',
         exploreServices: 'Explore Services',
         getInTouch: 'Get In Touch'
       },
       about: {
         title: 'About Me',
-        content: "I'm Mostafa Sabry, a tech expert with 10+ years of experience in IT support, networks, and freelance tech consulting. Based in Cairo, Egypt, I specialize in providing comprehensive technical solutions for both individuals and businesses, helping them navigate the complex world of technology with confidence and ease."
+        content: "I'm Mostafa Sabry, a tech expert with over 10 years of experience in IT support, networking, and freelance technical consulting. I specialize in providing comprehensive tech solutions for entrepreneurs and businesses, helping them focus on growth and improving their operations through smart technology."
       },
       services: {
         title: 'Services',
@@ -158,14 +156,13 @@ const Index = () => {
       },
       hero: {
         title: 'أخصائي تقنية معلومات أول',
-        subtitle: 'أنا مصطفى صبري، لدي 10 سنوات من الخبرة في الدعم التقني والمساعدة الافتراضية. أساعد الشركات ورجال الأعمال في حل مشاكلهم التقنية وإدارة أعمالهم بطريقة منظمة ومهنية، حتى يتمكنوا من التركيز على نمو أعمالهم — ويتركوا لي كل الأمور التقنية والمشاكل والتحسينات.',
-        location: 'مقيم في القاهرة، مصر • خبرة أكثر من 10 سنوات • مساعد افتراضي تقني',
+        subtitle: 'أنا مصطفى صبري، عندى أكثر من 10 سنوات من الخبرة في الدعم التقني والمساعدة الافتراضية، أساعد الشركات ورواد الأعمال في حل مشاكلهم التقنية وإدارة أعمالهم وتطويرها بطريقة منظمة ومهنية، حتى يتمكنوا من التركيز على نمو أعمالهم.',
         exploreServices: 'استكشف الخدمات',
         getInTouch: 'تواصل معي'
       },
       about: {
         title: 'نبذة عني',
-        content: 'أنا مصطفى صبري، خبير تقني بخبرة تزيد عن 10 سنوات في الدعم التقني والشبكات والاستشارات التقنية المستقلة. مقيم في القاهرة، مصر، أتخصص في تقديم حلول تقنية شاملة للأفراد والشركات، مساعدًا إياهم على التنقل في عالم التكنولوجيا المعقد بثقة وسهولة.'
+        content: 'أنا مصطفى صبري، خبير تقني بخبرة تزيد عن 10 سنوات في الدعم التقني والشبكات والاستشارات التقنية المستقلة، أ specialize في تقديم حلول تقنية شاملة لرواد الأعمال والشركات، مساعدًا إياهم في التركيز على نمو البزنس وتطور عملهم بواسطة التقنية.'
       },
       services: {
         title: 'الخدمات',
@@ -368,19 +365,17 @@ const Index = () => {
                   src="/lovable-uploads/fbec8b21-4a26-4c9f-bb98-ab7aa87c2757.png"
                   alt="Mostafa Sabry"
                   className="w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover object-center border-8 border-white/20 shadow-2xl"
+                  style={{ objectPosition: 'center top' }}
                 />
               </div>
               
               {/* Hero Content */}
               <div className="text-center lg:text-left max-w-2xl">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                <h1 className={`font-bold mb-6 text-white ${language === 'ar' ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-4xl sm:text-5xl lg:text-6xl'}`}>
                   {currentLang.hero.title}
                 </h1>
                 <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 font-light leading-relaxed">
                   {currentLang.hero.subtitle}
-                </p>
-                <p className="text-lg text-white/80 mb-12">
-                  {currentLang.hero.location}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <button
