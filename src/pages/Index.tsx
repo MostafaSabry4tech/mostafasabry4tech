@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Mail, Linkedin, MessageCircle, Code, Server, Shield, Users, Download, Award, ChevronDown, Quote, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -40,15 +41,18 @@ const Index = () => {
         items: [
           {
             title: 'Technical Support for Businesses',
-            description: 'Enterprise IT solutions, server management, and infrastructure support for growing companies'
+            description: 'Enterprise IT solutions, server management, and infrastructure support for growing companies',
+            image: '/images/services/service-business-support.png'
           },
           {
             title: 'Technical Support for Individuals', 
-            description: 'Personal tech troubleshooting, device setup, and software assistance for individuals'
+            description: 'Personal tech troubleshooting, device setup, and software assistance for individuals',
+            image: '/images/services/service-individual-support.png'
           },
           {
             title: 'Technical Consultations',
-            description: 'Strategic technology planning, security audits, and system optimization consulting'
+            description: 'Strategic technology planning, security audits, and system optimization consulting',
+            image: '/images/services/service-tech-consulting.png'
           }
         ]
       },
@@ -87,7 +91,7 @@ const Index = () => {
         whatsappText: 'Quick consultation'
       },
       footer: {
-        copyright: '© 2025 Mostafa Sabry. All rights reserved. | Senior IT Specialist & Tech Virtual Assistant',
+        copyright: '© 2025 Mostafa Sabry. All rights reserved.',
         quickLinks: 'Quick Links',
         followMe: 'Follow Me',
         links: {
@@ -118,15 +122,18 @@ const Index = () => {
         items: [
           {
             title: 'الدعم الفني للشركات',
-            description: 'حلول تقنية المعلومات للمؤسسات وإدارة الخوادم ودعم البنية التحتية للشركات النامية'
+            description: 'حلول تقنية المعلومات للمؤسسات وإدارة الخوادم ودعم البنية التحتية للشركات النامية',
+            image: '/images/services/service-business-support.png'
           },
           {
             title: 'الدعم الفني للأفراد',
-            description: 'استكشاف أخطاء التقنية الشخصية وإعداد الأجهزة ومساعدة البرامج للأفراد'
+            description: 'استكشاف أخطاء التقنية الشخصية وإعداد الأجهزة ومساعدة البرامج للأفراد',
+            image: '/images/services/service-individual-support.png'
           },
           {
             title: 'الاستشارات التقنية',
-            description: 'التخطيط التقني الاستراتيجي ومراجعات الأمان وتحسين النظم الاستشارية'
+            description: 'التخطيط التقني الاستراتيجي ومراجعات الأمان وتحسين النظم الاستشارية',
+            image: '/images/services/service-tech-consulting.png'
           }
         ]
       },
@@ -188,6 +195,7 @@ const Index = () => {
     icon: [<Server className="w-8 h-8" />, <Code className="w-8 h-8" />, <Shield className="w-8 h-8" />][index],
     title: item.title,
     description: item.description,
+    image: item.image,
     slug: ['businesses', 'individuals', 'consultations'][index]
   }));
 
@@ -257,9 +265,9 @@ const Index = () => {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
+        <section id="about" className="py-12 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <div className="flex items-center justify-center mb-4">
                 <Users className="w-8 h-8 text-white mr-3" />
                 <h2 className="text-4xl font-bold text-white">{currentLang.about.title}</h2>
@@ -289,9 +297,9 @@ const Index = () => {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-16 px-4 sm:px-6 lg:px-8">
+        <section id="services" className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <div className="flex items-center justify-center mb-4">
                 <Server className="w-8 h-8 text-white mr-3" />
                 <h2 className="text-4xl font-bold text-white">{currentLang.services.title}</h2>
@@ -304,23 +312,27 @@ const Index = () => {
                   key={index}
                   className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group"
                 >
-                  <div className="w-full h-48 bg-gradient-to-r from-sky-600/20 to-sky-700/20 rounded-lg mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                    <div className="text-white group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
-                    </div>
+                  <div className="w-full h-32 mb-4 flex items-center justify-center overflow-hidden rounded-lg">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white">
+                  <h3 className="text-xl font-semibold mb-3 text-white text-center">
                     {service.title}
                   </h3>
-                  <p className="text-white/80 mb-4">
+                  <p className="text-white/80 mb-4 text-center">
                     {service.description}
                   </p>
-                  <Link
-                    to={`/services/${service.slug}`}
-                    className="inline-block bg-white text-sky-600 hover:bg-sky-50 px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
-                  >
-                    {language === 'en' ? 'Learn More' : 'اعرف المزيد'}
-                  </Link>
+                  <div className="text-center">
+                    <Link
+                      to={`/services/${service.slug}`}
+                      className="inline-block bg-white text-sky-600 hover:bg-sky-50 px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+                    >
+                      {language === 'en' ? 'Learn More' : 'اعرف المزيد'}
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
@@ -328,9 +340,9 @@ const Index = () => {
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="py-16 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
+        <section id="portfolio" className="py-12 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <div className="flex items-center justify-center mb-4">
                 <Award className="w-8 h-8 text-white mr-3" />
                 <h2 className="text-4xl font-bold text-white">{currentLang.portfolio.title}</h2>
@@ -378,9 +390,9 @@ const Index = () => {
         </section>
 
         {/* Trusted By Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 text-gray-800">
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100 text-gray-800">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <div className="flex items-center justify-center mb-4">
                 <Award className="w-8 h-8 text-sky-600 mr-3" />
                 <h2 className="text-4xl font-bold text-gray-800">{currentLang.trustedBy.title}</h2>
@@ -411,7 +423,7 @@ const Index = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
+        <section id="contact" className="py-12 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center mb-4">
               <Mail className="w-8 h-8 text-white mr-3" />
