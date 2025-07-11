@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Mail, Linkedin, MessageCircle, Code, Server, Shield, Users, Download, Award, ChevronDown, Quote, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,7 +5,7 @@ import { Navigation } from '../components/Navigation';
 import { AnimatedBackground } from '../components/AnimatedBackground';
 
 const Index = () => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState<'en' | 'ar'>('en');
 
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
@@ -183,7 +182,7 @@ const Index = () => {
     }
   };
 
-  const currentLang = t[language as keyof typeof t];
+  const currentLang = t[language];
 
   const services = currentLang.services.items.map((item, index) => ({
     icon: [<Server className="w-8 h-8" />, <Code className="w-8 h-8" />, <Shield className="w-8 h-8" />][index],

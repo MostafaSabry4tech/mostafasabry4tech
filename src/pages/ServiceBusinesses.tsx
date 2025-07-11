@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Code, Server, Shield, Users, Download, Award, ChevronDown, Quote, Globe, Mail, Linkedin, MessageCircle } from 'lucide-react';
 
 const ServiceBusinesses = () => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState<'en' | 'ar'>('en');
 
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
@@ -89,7 +89,7 @@ const ServiceBusinesses = () => {
     }
   };
 
-  const currentLang = t[language as keyof typeof t];
+  const currentLang = t[language];
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>

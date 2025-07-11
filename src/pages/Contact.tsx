@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Globe, ArrowLeft, Mail, Linkedin, MessageCircle, Send, User, Phone } from 'lucide-react';
 
 const Contact = () => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState<'en' | 'ar'>('en');
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -106,7 +106,7 @@ ${formData.message}
     }
   };
 
-  const currentLang = t[language as keyof typeof t];
+  const currentLang = t[language];
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { AnimatedBackground } from '../components/AnimatedBackground';
@@ -6,7 +5,7 @@ import { Code, ExternalLink, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState<'en' | 'ar'>('en');
 
   useEffect(() => {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
@@ -116,7 +115,7 @@ const Portfolio = () => {
     }
   };
 
-  const currentLang = t[language as keyof typeof t];
+  const currentLang = t[language];
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden" dir={language === 'ar' ? 'rtl' : 'ltr'}>
